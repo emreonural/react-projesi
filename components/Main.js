@@ -11,7 +11,7 @@ class Main extends Component {
     constructor(props){
         super(props);
 
-        this.state= {
+        this.state = {
             windowH: 0,
             page: 0,
             touchxS: 0,

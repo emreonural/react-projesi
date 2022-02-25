@@ -250,7 +250,7 @@ a:hover {
   /* main-details */
 
     .row-sec1, .row-sec2 {
-      height: 100vh;
+      height: calc(var(--vh, 1vh) * 100);;
       width: 100%;
       background: #0E1F50;
       position: relative;
@@ -1708,7 +1708,9 @@ a:hover {
   /* contacts */
 
   .contact-body {
-    height: 85%;
+    height: 65%;
+    display: grid;
+    align-content: start;
   }
   .input-body-1 {
     padding-left: 15px;
@@ -1736,7 +1738,7 @@ a:hover {
     justify-content: center;
     color: #fff;
     font-size: 20px;
-    min-height: 40px;
+    height: 40px;
     max-width: 140px;
   }
   .contact-input {
