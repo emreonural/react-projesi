@@ -58,38 +58,32 @@ class Tokenomics extends Component {
                     <Col md={12} className="tokenomics-title">
                         <span>TOKENOMICS</span>
                     </Col>
-                    <Col md={12} className="tokenomics-body">
+                    <Col md={12} className="tokenomics-body d-xl-flex d-lg-flex d-md-none d-sm-none d-none">
                         <Col md={6} className="tokenomics-left">
                             <img src="/assets/img/lab.svg"/>
                             <Col className="lab-body">
-                                <Col md={12} className="lab-text">
-                                    <span className="left-lab">
+                                <Col md={12} className="m-statistic-body">
+                                    <span className="m-left-statistic">
                                         <p>Token Name</p>
-                                        <img src="/assets/img/small_panel.svg" />
                                     </span>
-                                    <span className="right-lab">
+                                    <span className="m-right-statistic">
                                         <p>IXIRPAD</p>
-                                        <img src="/assets/img/small_transparent.svg" />
                                     </span>
                                 </Col>
-                                <Col md={12} className="lab-text">
-                                    <span className="left-lab">
+                                <Col md={12} className="m-statistic-body">
+                                    <span className="m-left-statistic">
                                         <p>Symbol</p>
-                                        <img src="/assets/img/small_panel.svg" />
                                     </span>
-                                    <span className="right-lab">
+                                    <span className="m-right-statistic">
                                         <p>IXIR</p>
-                                        <img src="/assets/img/small_transparent.svg" />
                                     </span>
                                 </Col>
-                                <Col md={12} className="lab-text">
-                                    <span className="left-lab">
+                                <Col md={12} className="m-statistic-body">
+                                    <span className="m-left-statistic">
                                         <p>Total Suply</p>
-                                        <img src="/assets/img/small_panel.svg" />
                                     </span>
-                                    <span className="right-lab">
+                                    <span className="m-right-statistic">
                                         <p>100.000.000</p>
-                                        <img src="/assets/img/small_transparent.svg" />
                                     </span>
                                 </Col>
                             </Col>
@@ -102,6 +96,26 @@ class Tokenomics extends Component {
                                             <p>{item.name}</p>
                                         </span>
                                         <span className="right-statistic">
+                                            <p>{item.amount}</p>
+                                        </span>
+                                    </Col>
+                                );
+                            })}
+                            
+                        </Col>
+                    </Col>
+                    <Col md={12} className="m-tokenomics-body d-xl-none d-lg-none d-md-flex d-sm-flex d-flex">
+                        <Col md={12} className="m-tokenomics-left">
+                            <img src="/assets/img/lab.svg"/>
+                        </Col>
+                        <Col md={12} className="m-tokenomics-right">
+                            {this.state.statistics.map((item, index) => {
+                                return (
+                                    <Col md={12} className="m-statistic-body" key={index}>
+                                        <span className="m-left-statistic">
+                                            <p>{item.name}</p>
+                                        </span>
+                                        <span className="m-right-statistic">
                                             <p>{item.amount}</p>
                                         </span>
                                     </Col>

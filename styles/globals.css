@@ -29,8 +29,8 @@ a:hover {
     height: 10vh;
     display: flex;
     z-index: 9;
-    padding-left: 5%;
-    padding-right: 5%;
+    padding-left: 2vw;
+    padding-right: 2vw;
     margin-top: 2vh;
   }
   .h-logo-area {
@@ -42,7 +42,9 @@ a:hover {
   .h-logo-area a {
     display: flex;
     height: auto;
-    width: 70%;
+    width: 100%;
+    max-width: 250px;
+    min-width: 124px;
   }
   .h-title-area {
     display: flex;
@@ -51,7 +53,7 @@ a:hover {
   }
   .h-title-area a p {
     color: #fff;
-    font-size: 20px;
+    font-size: calc(.5vh + .5vw + 5px);
     text-align: center;
     margin-bottom: 0%;
     position: relative;
@@ -76,21 +78,21 @@ a:hover {
   .h-button-area {
     display: flex;
     align-items: center;
-    justify-content: center;
   }
   .header-button {
     height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 8px;
+    margin: .5vw;
   }
   a.header-button:nth-child(1) {
     background: linear-gradient(180deg, rgb(172, 69, 254) 10%, rgb(79, 152, 232) 100%);
-    width: 158px;
-    height: 50px;
+    width: calc(5vh + 5vw + 24px);
+    height: calc(1.6vh + 1.6vw + 14px);
     border-radius: 16px;
     transition: .2s linear all;
+    margin-left: auto;
   }
   a.header-button:nth-child(1):hover {
     background: linear-gradient(180deg, rgb(172, 69, 254) 100%, rgb(79, 152, 232) 100%);
@@ -132,12 +134,13 @@ a:hover {
     }
   }
   a.header-button:nth-child(2) {
-    width: 138px;
-    height: 50px;
+    width: calc(4vh + 4vw + 14px);
+    height: calc(1.6vh + 1.6vw + 14px);
     border-radius: 16px;
     transition: .2s linear all;
     padding: 0 32px;
     border: 1px solid #ddd;
+    margin-right: 45px;
   }
   a.header-button:nth-child(2):hover {
     border: 2px solid #ddd;
@@ -146,11 +149,100 @@ a:hover {
     margin: 0;
     position: absolute;
     color: #fff;
-    font-size: 21px;
+    font-size: calc(.5vh + .5vw + 7px);
   }
   .header-button img {
     width: 100%;
     height: auto;
+  }
+  .m-title-area {
+    position: absolute;
+    width: 100%;
+    right: 0;
+    margin: auto;
+    top: 10vh;
+    padding: 0 6%;
+    height: auto;
+    max-height: 0px;
+    transition: .2s linear all;
+    overflow: hidden;
+  }
+  .opened.m-title-area {
+    max-height: 252px;
+  }
+  .m-header-title {
+    background: rgba(172, 69, 254, 0.8);
+    width: 100%;
+    display: flex;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    letter-spacing: 1px;
+    margin-bottom: 2px;
+  }
+  .m-header-title p {
+    margin-bottom: 0;
+  }
+  .hamburger_div {
+    width: auto;
+    height: auto;
+    position: absolute;
+    transform: scale(1);
+    -webkit-transition: all 0.4s cubic-bezier(0.25, -0.25, 0.75, 1.25) !important;
+    -moz-transition: all 0.4s cubic-bezier(0.25, -0.25, 0.75, 1.25) !important;
+    -o-transition: all 0.4s cubic-bezier(0.25, -0.25, 0.75, 1.25) !important;
+    -ms-transition: all 0.4s cubic-bezier(0.25, -0.25, 0.75, 1.25) !important;
+    transition: all 0.4s cubic-bezier(0.25, -0.25, 0.75, 1.25) !important;
+    transform-origin: 25% 60%;
+  }
+  .header-on {
+    transform: scale(1) !important;
+  }
+  #icon {
+    width: 80px;
+    height: auto;
+    margin-left: -20px;
+    cursor: pointer;
+    margin-top: -5px;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  #hamburger {
+    position: absolute;
+    right: 0;
+    z-index: 9999;
+  }
+  #hamburger path {
+    fill: none;
+    -webkit-transition: all 0.4s cubic-bezier(0.25, -0.25, 0.75, 1.25) !important;
+    -moz-transition: all 0.4s cubic-bezier(0.25, -0.25, 0.75, 1.25) !important;
+    -o-transition: all 0.4s cubic-bezier(0.25, -0.25, 0.75, 1.25) !important;
+    -ms-transition: all 0.4s cubic-bezier(0.25, -0.25, 0.75, 1.25) !important;
+    transition: all 0.4s cubic-bezier(0.25, -0.25, 0.75, 1.25) !important;
+    stroke-width: 40px;
+    stroke-linecap: round;
+    stroke: rgb(172, 69, 254);
+    stroke-dashoffset: 0px;
+  }
+  path#top,
+  path#bottom {
+    stroke-dasharray: 240px 950px;
+  }
+  path#middle {
+    stroke-dasharray: 240px 240px;
+  }
+  .cross path#top,
+  .cross path#bottom {
+    stroke-dashoffset: -650px;
+    stroke-dashoffset: -650px;
+  }
+  .cross path#middle {
+    stroke-dashoffset: -115px;
+    stroke-dasharray: 1px 220px;
   }
 /* end of header */
 
@@ -171,6 +263,7 @@ a:hover {
       background-size: cover;
       background-position: center;
       opacity: 0.4;
+      overflow: hidden;
     }
     .row-sec1::before {
       background-image: url('/assets/img/background1.png');
@@ -387,12 +480,12 @@ a:hover {
     justify-content: center;
     display: flex;
     color: #fff;
-    height: 15%;
+    height: 30%;
     align-items: center;
     flex-direction: column;
   }
   .exchance-title span {
-    font-size: 35px;
+    font-size: calc(1vw + 1vh + 10px);
     position: relative;
     font-weight: 600;
     letter-spacing: 1.5px;
@@ -505,7 +598,8 @@ a:hover {
     letter-spacing: 1px;
   }
   .exchance-sec-1 .text-area .ext-footer {
-    font-size: 14px;
+    font-size: calc(0.4vw + 0.3vh + 6px);
+    line-height: calc(0.4vw + 0.3vh + 6px);
     text-align: start;
   }
   .exchance-sec-1 .text-area .ext-footer img {
@@ -597,6 +691,46 @@ a:hover {
     bottom: 0;
     margin: auto;
     font-weight: 500;
+  }
+
+  .m-exchance-items {
+    display: block;
+    padding: 2vh 0%;
+    height: 33%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+  .m-exchance-items .exchance-sec-1, 
+  .m-exchance-items .exchance-sec-2, 
+  .m-exchance-items .exchance-sec-3 {
+    max-width: 365px;
+    min-width: 300px;
+    margin-top: 10%;
+  }
+  .m-exchance-items .exchance-sec-1 {
+    margin-left: auto;
+    margin-bottom: 150px;
+  }
+  .m-exchance-items .exchance-sec-2 {
+    margin-bottom: 150px;
+  }
+  .m-exchance-items .exchance-sec-3 {
+    margin-right: auto;
+  }
+  .m-exchance-items .exchance-sec-1 .text-area .ext-subtext, 
+  .m-exchance-items .exchance-sec-2 .text-area .ext-subtext, 
+  .m-exchance-items .exchance-sec-3 .text-area .ext-subtext {
+    font-size: calc(0.4vw + 0.4vh + 8px);
+    line-height: calc(0.4vw + 0.4vh + 8px);
+    display: flex;
+    position: relative;
+    top: 0;
+    margin: 1% auto;
+    width: 100%;
+    letter-spacing: 1px;
+  }
+  .m-exchance-items .exchance-sec-1 .text-area .ext-footer {
+    font-size: calc(0.4vw + 0.3vh + 9px);
   }
   /* end of exchance */
 
@@ -953,10 +1087,37 @@ a:hover {
   /* wp */
 
   .wp-body {
-    height: 75%;
+    height: 80%;
     display: flex;
-    padding: 0 5%;
+    padding: 0 5% 5%;
     position: relative;
+  }
+  .wp-title {
+    justify-content: center;
+    display: flex;
+    color: #fff;
+    height: 20%;
+    align-items: center;
+    flex-direction: column;
+  }
+  .wp-title span {
+    font-size: calc(1vw + 1vh + 10px);
+    position: relative;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  .wp-title span::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    right: 0;
+    left: 0;
+    bottom: -10px;
+    background: #fff;
+    margin: auto;
   }
   .wp-left {
     display: block;
@@ -964,7 +1125,7 @@ a:hover {
     z-index: 1;
     transition: 1s all ease-in-out;
     transform: translate(-110%);
-    height: 60%;
+    height: auto;
     z-index: 9;
   }
   .active-3 .wp-left {
@@ -989,7 +1150,7 @@ a:hover {
     z-index: 1;
     transition: 1s all ease-in-out;
     transform: translate(110%);
-    height: 40%;
+    height: auto;
   }
   .active-3 .wp-right {
     transform: translate(0%);
@@ -1204,11 +1365,13 @@ a:hover {
     z-index: 1;
   }
   .tokenomics-left img{
-    height: 90%;
+    height: 100%;
+    margin-top: -10%;
     width: auto;
   }
   .tokenomics-right {
-    display: block;
+    display: grid;
+    height: 90%;
     position: relative;
     z-index: 1;
     padding: 3%;
@@ -1288,6 +1451,74 @@ a:hover {
     width: 100%;
     display: flex;
     margin-bottom: 3%;
+  }
+
+  .m-tokenomics-body {
+    height: 85%;
+    display: flex;
+    padding: 0 5%;
+    position: relative;
+  }
+  .m-tokenomics-left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+  }
+  .m-tokenomics-left img{
+    height: 100%;
+    left: -510px;
+    top: -5%;
+    width: auto;
+    position: absolute;
+  }
+  .m-tokenomics-right {
+    display: grid;
+    position: absolute;
+    padding: 0%;
+    height: 90%;
+    width: 90%;
+    right: 0;
+    bottom: 4%;
+    z-index: 1;
+  }
+  .m-left-statistic {
+    width: 65%;
+    position: relative;
+    background: #4266a7;
+    border: 1px solid #fff;
+    border-radius: 18px;
+    height: calc(0.8vw + 0.8vh + 30px);
+    display: flex;
+    margin-right: 2%;
+  }
+  .m-right-statistic {
+    width: 30%;
+    position: relative;
+    border: 1px solid #fff;
+    border-radius: 18px;
+    height: calc(0.8vw + 0.8vh + 30px);
+    display: flex;
+  }
+  .m-left-statistic p, .m-right-statistic p {
+    position: relative;
+    margin: auto;
+    font-size: calc(0.5vw + 0.5vh + 6px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    padding: 0 4%;
+  }
+  .m-left-statistic img, .m-right-statistic img {
+    width: 100%;
+  }
+  .m-statistic-body {
+    display: flex;
+    margin-bottom: 3%;
+    padding-right: 0;
+    right: -9px;
   }
   /* end of tokenomics */
 
@@ -1486,18 +1717,16 @@ a:hover {
   .input-body-2 {
     padding-left: 30px;
     padding-right: 30px;
-    margin-top: 30px;
   }
   .input-body-3 {
     padding-left: 30px;
     padding-right: 30px;
-    margin-top: 30px;
   }
   .input-body-3 .input-group {
     display: block !important;
   }
   .input-title {
-    min-width: 140px;
+    min-width: 100px;
     height: auto;
     background: #4266a7;
     border: 1px solid #fff;
@@ -1507,7 +1736,7 @@ a:hover {
     justify-content: center;
     color: #fff;
     font-size: 20px;
-    min-height: 48px;
+    min-height: 40px;
     max-width: 140px;
   }
   .contact-input {
@@ -1577,7 +1806,7 @@ a:hover {
 /* footer */
 footer {
   position: absolute;
-  height: 250px;
+  height: 180px;
   display: flex;
   align-items: center;
   justify-content: center;

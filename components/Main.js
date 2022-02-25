@@ -21,6 +21,7 @@ class Main extends Component {
         this.setState({
             windowH: window.innerHeight
         })
+        window.scrollTo(0, 0);
         window.addEventListener("wheel", this.handleWay.bind(this));
     }
     sleep = (ms) => {

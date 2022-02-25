@@ -14,45 +14,45 @@ class Contact extends Component {
                         <span>CONTACT US</span>
                     </Col>
                     <Col md={9} className="contact-body mx-auto">
-                        <Col md={12} className="input-body-1 d-flex">
-                            <Col md={6} className="input-area">
-                                <InputGroup className="mb-3" size="lg">
+                        <Col md={12} className="input-body-1 d-lg-flex d-md-block">
+                            <Col lg={6} md={12} className="input-area mb-4">
+                                <InputGroup className="mb-3">
                                     <span className="input-title">Name</span>
                                     <FormControl
-                                        aria-label="Large"
-                                        aria-describedby="inputGroup-sizing-large"
+                                        aria-label="default"
+                                        aria-describedby="inputGroup-sizing-default"
                                         className="contact-input"
                                     />
                                 </InputGroup>
                             </Col>
-                            <Col md={6} className="input-area">
-                                <InputGroup className="mb-3" size="lg">
+                            <Col lg={6} md={12} className="input-area mb-4">
+                                <InputGroup className="mb-3">
                                     <span className="input-title">Email</span>
                                     <FormControl
-                                        aria-label="Large"
-                                        aria-describedby="inputGroup-sizing-large"
+                                        aria-label="default"
+                                        aria-describedby="inputGroup-sizing-default"
                                         className="contact-input"
                                     />
                                 </InputGroup>
                             </Col>
                         </Col>
-                        <Col md={12} className="input-body-2 d-flex">
-                            <InputGroup className="mb-3" size="lg">
+                        <Col md={12} className="input-body-2 d-flex mb-4">
+                            <InputGroup className="mb-3">
                                 <span className="input-title">Subject</span>
                                 <FormControl
-                                    aria-label="Large"
-                                    aria-describedby="inputGroup-sizing-large"
+                                    aria-label="default"
+                                    aria-describedby="inputGroup-sizing-default"
                                     className="contact-input"
                                 />
                             </InputGroup>
                         </Col>
-                        <Col md={12} className="input-body-3">
-                            <InputGroup className="mb-3" size="lg">
+                        <Col md={12} className="input-body-3 mb-4">
+                            <InputGroup className="mb-3">
                                 <span className="input-title">Message</span>
                                 <FormControl
                                     as="textarea"
-                                    aria-label="Large"
-                                    aria-describedby="inputGroup-sizing-large"
+                                    aria-label="default"
+                                    aria-describedby="inputGroup-sizing-default"
                                     className="contact-input ml-0"
                                     rows={3}
                                 />
