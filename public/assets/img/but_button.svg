@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 25.4.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 182 58" style="enable-background:new 0 0 182 58;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:url(#Rectangle_46_00000181783081676319854880000002826785425771108013_);}
+</style>
+<linearGradient id="Rectangle_46_00000037691297568532359750000004762615596708974987_" gradientUnits="userSpaceOnUse" x1="-23.9231" y1="73.2931" x2="-23.9231" y2="72.2931" gradientTransform="matrix(182 0 0 -58 4445 4251)">
+	<stop  offset="4.000000e-03" style="stop-color:#05ABD7"/>
+	<stop  offset="1" style="stop-color:#00FB96"/>
+</linearGradient>
+<path id="Rectangle_46" style="fill:url(#Rectangle_46_00000037691297568532359750000004762615596708974987_);" d="M21,0h140
+	c11.6,0,21,9.4,21,21v16c0,11.6-9.4,21-21,21H21C9.4,58,0,48.6,0,37V21C0,9.4,9.4,0,21,0z"/>
+</svg>
