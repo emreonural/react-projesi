@@ -14,6 +14,8 @@ class Main extends Component {
         this.state= {
             windowH: 0,
             page: 0,
+            touchxS: 0,
+            touchxE: 0,
             canscroll: true,
         }
     }
@@ -23,6 +25,21 @@ class Main extends Component {
         })
         window.scrollTo(0, 0);
         window.addEventListener("wheel", this.handleWay.bind(this));
+        window.addEventListener("touchstart", this.handleTStart.bind(this));
+        window.addEventListener("touchend", this.handleTEnd.bind(this));
+    }
+    handleTStart = (e) => {
+        this.setState({
+            touchxS: e.touches[0].clientX
+        })
+    }
+    handleTEnd = async (e) => {
+        await this.setState({
+            touchxE: e.changedTouches[0].clientX
+        })
+        if(this.state.touchxE - this.state.touchxS > 10 || this.state.touchxE - this.state.touchxS < -10){
+            this.handleWay({deltaY: this.state.touchxE - this.state.touchxS})
+        }
     }
     sleep = (ms) => {
         return new Promise(resolve => setTimeout(resolve, ms));
@@ -60,6 +77,9 @@ class Main extends Component {
     }
     componentWillUnmount() {
         window.removeEventListener("wheel", this.handleWay.bind(this));
+        window.removeEventListener("touchmove", this.handleWay.bind(this));
+        window.removeEventListener("touchstart", this.handleTStart.bind(this));
+        window.removeEventListener("touchend", this.handleTEnd.bind(this));
     }
     handleNavigate = async (ind) => {
         await this.setState({
