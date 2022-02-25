@@ -21,7 +21,7 @@ class Main extends Component {
     }
     componentDidMount() {
         this.setState({
-            windowH: window.innerHeight
+            windowH: window.visualViewport.height
         })
         window.scrollTo(0, 0);
         window.addEventListener("wheel", this.handleWay.bind(this));
@@ -77,7 +77,6 @@ class Main extends Component {
     }
     componentWillUnmount() {
         window.removeEventListener("wheel", this.handleWay.bind(this));
-        window.removeEventListener("touchmove", this.handleWay.bind(this));
         window.removeEventListener("touchstart", this.handleTStart.bind(this));
         window.removeEventListener("touchend", this.handleTEnd.bind(this));
     }
