@@ -27,6 +27,10 @@ class Main extends Component {
         window.addEventListener("wheel", this.handleWay.bind(this));
         window.addEventListener("touchstart", this.handleTStart.bind(this));
         window.addEventListener("touchend", this.handleTEnd.bind(this));
+        window.addEventListener('resize', this.handleResize.bind(this));
+        let vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+       
     }
     handleTStart = (e) => {
         this.setState({
@@ -36,10 +40,19 @@ class Main extends Component {
     handleTEnd = async (e) => {
         await this.setState({
             touchxE: e.changedTouches[0].clientX
-        })
+        });
         if(this.state.touchxE - this.state.touchxS > 10 || this.state.touchxE - this.state.touchxS < -10){
             this.handleWay({deltaY: this.state.touchxE - this.state.touchxS})
         }
+        await this.setState({
+            touchxS: 0,
+            touchxE: 0
+        });
+    }
+
+    handleResize = (e) => {
+        let vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
     }
     sleep = (ms) => {
         return new Promise(resolve => setTimeout(resolve, ms));
