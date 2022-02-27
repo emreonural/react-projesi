@@ -250,10 +250,10 @@ a:hover {
   /* main-details */
 
     .row-sec1, .row-sec2 {
+      min-height: 100vh;
       min-height: -webkit-fill-available;
       height: 100vh;
       height: calc(var(--vh, 1vh) * 100);
-      height: calc(100vh - calc(100vh - 100%));
       width: 100%;
       background: #0E1F50;
       position: relative;
