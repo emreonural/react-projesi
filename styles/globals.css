@@ -250,7 +250,6 @@ a:hover {
   /* main-details */
 
     .row-sec1, .row-sec2 {
-      min-height: 100vh;
       min-height: -webkit-fill-available;
       height: 100vh;
       height: calc(var(--vh, 1vh) * 100);
@@ -510,6 +509,12 @@ a:hover {
     font-size: 20px;
     text-align: center;
   }
+  .exchance-body {
+    height: 70%;
+    display: block;
+    padding: 0 5% 5%;
+    position: relative;
+  }
   .exchance-items {
     display: flex;
     padding: 2vh 10%;
@@ -699,7 +704,7 @@ a:hover {
   .m-exchance-items {
     display: block;
     padding: 2vh 0%;
-    height: 33%;
+    height: auto;
     overflow-y: scroll;
     overflow-x: hidden;
   }
