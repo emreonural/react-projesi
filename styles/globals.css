@@ -10,6 +10,7 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   scroll-behavior: smooth;
   overflow: hidden;
+  height: auto;
 }
 
 a {
@@ -704,7 +705,7 @@ a:hover {
   .m-exchance-items {
     display: block;
     padding: 2vh 0%;
-    height: auto;
+    height: 100%;
     overflow-y: scroll;
     overflow-x: hidden;
   }
@@ -1446,7 +1447,7 @@ a:hover {
   }
   .statistic-body {
     display: flex;
-    margin-bottom: 3%;
+    margin-bottom: 1.8vh;
   }
   .lab-body {
     position: absolute;
@@ -1817,7 +1818,7 @@ a:hover {
 /* footer */
 footer {
   position: absolute;
-  height: 10vh;
+  height: 12vh;
   display: flex;
   align-items: center;
   justify-content: center;
