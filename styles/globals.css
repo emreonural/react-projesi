@@ -35,7 +35,6 @@ a:hover {
     padding-left: 2vw;
     padding-right: 2vw;
     margin-top: 2vh;
-    overflow: hidden;
   }
   .h-logo-area {
     display: flex;
@@ -49,6 +48,9 @@ a:hover {
     width: 100%;
     max-width: 250px;
     min-width: 100px;
+  }
+  .h-logo-area img {
+    max-width: 30vw!important;
   }
   .h-title-area {
     display: flex;
@@ -82,6 +84,7 @@ a:hover {
   .h-button-area {
     display: flex;
     align-items: center;
+    overflow: hidden;
   }
   .header-button {
     height: auto;
@@ -257,10 +260,11 @@ a:hover {
     .row-sec1, .row-sec2 {
       min-height: -webkit-fill-available;
       height: 100vh;
-      height: calc(var(--vh, 1vh) * 100);
+      /* height: calc(var(--vh, 1vh) * 100); */
       width: 100%;
       background: #0E1F50;
       position: relative;
+      overflow: hidden;
     }
     .row-sec1::before, .row-sec2::before {
       content: '';
@@ -492,7 +496,7 @@ a:hover {
     flex-direction: column;
   }
   .exchance-title span {
-    font-size: calc(1vw + 1vh + 10px);
+    font-size: calc(1vw + 1vh + 12px);
     position: relative;
     font-weight: 600;
     letter-spacing: 1.5px;
@@ -683,12 +687,14 @@ a:hover {
     }
   }
   .exchange-button {
-    width: 50%;
+    width: 60%;
     height: auto;
     display: flex;
-    margin: auto;
     position: relative;
-    margin-top: 5%;
+    margin: 5% auto auto;
+    justify-content: center;
+    align-content: center;
+    vertical-align: middle;
   }
   .exchange-button p {
     color: #fff;
@@ -719,6 +725,7 @@ a:hover {
     max-width: 365px;
     min-width: 300px;
     margin-top: 10%;
+    transform: scale(1) !important;
   }
   .m-exchance-items .exchance-sec-1 {
     margin-left: auto;
@@ -758,7 +765,7 @@ a:hover {
     flex-direction: column;
   }
   .roadmap-title span {
-    font-size: 35px;
+    font-size: calc(1vw + 1vh + 12px);
     position: relative;
     font-weight: 600;
     letter-spacing: 1.5px;
@@ -786,7 +793,7 @@ a:hover {
     flex-direction: column;
   }
   .roadmap-mobile-title span {
-    font-size: 35px;
+    font-size: calc(1vw + 1vh + 12px);
     position: relative;
     font-weight: 600;
     letter-spacing: 1.5px;
@@ -1114,7 +1121,7 @@ a:hover {
     flex-direction: column;
   }
   .wp-title span {
-    font-size: calc(1vw + 1vh + 10px);
+    font-size: calc(1vw + 1vh + 12px);
     position: relative;
     font-weight: 600;
     letter-spacing: 1.5px;
@@ -1286,13 +1293,13 @@ a:hover {
     height: auto;
     width: 90%;
     letter-spacing: 1px;
-    line-height: calc(1vw + 1vh + 10px);
+    line-height: calc(1vw + 1vh + 12px);
     align-items: center;
     flex-direction: column;
     padding: calc(1.6vw + 1.6vh) calc(.5vw + .5vh);
   }
   .wp-subtitle span {
-    font-size: calc(1vw + 1vh + 10px);
+    font-size: calc(1vw + 1vh + 12px);
     margin-bottom: calc(0.5vw + 0.5vh + 5px);
     position: relative;
     font-weight: 400;
@@ -1354,7 +1361,7 @@ a:hover {
     align-items: center;
   }
   .tokenomics-title span {
-    font-size: 35px;
+    font-size: calc(1vw + 1vh + 12px);
     position: relative;
     font-weight: 600;
     letter-spacing: 1.5px;
@@ -1483,7 +1490,7 @@ a:hover {
   }
   .m-tokenomics-left img{
     height: 100%;
-    left: -510px;
+    left: -115vw;
     top: -5%;
     width: auto;
     position: absolute;
@@ -1547,7 +1554,7 @@ a:hover {
     flex-direction: column;
   }
   .partners-title span {
-    font-size: 35px;
+    font-size: calc(1vw + 1vh + 12px);
     position: relative;
     font-weight: 600;
     letter-spacing: 1.5px;
@@ -1606,6 +1613,7 @@ a:hover {
     text-align: center;
     font-size: 18px;
     font-weight: 500;
+    padding-bottom: 20px;
     color: #fff;
   }
   .partner-item img {
@@ -1723,7 +1731,7 @@ a:hover {
   /* contacts */
 
   .contact-body {
-    height: 65%;
+    height: 75%;
     display: grid;
     align-content: start;
   }
@@ -1798,7 +1806,7 @@ a:hover {
     align-items: center;
   }
   .contact-title span {
-    font-size: 35px;
+    font-size: calc(1vw + 1vh + 12px);
     position: relative;
     font-weight: 600;
     letter-spacing: 1.5px;
@@ -1842,6 +1850,7 @@ footer {
   justify-content: center;
   height: 100%;
   margin-right: 5%;
+  max-width: 30vw;
 }
 .footer-logo-area a {
   display: flex;
@@ -1858,6 +1867,9 @@ footer {
   height: auto;
   display: flex;
   transition: .2s linear all;
+}
+.social-button img {
+  max-width: 10vw;
 }
 .social-button:hover {
   transform: scale(1.05);
