@@ -25,7 +25,6 @@ class Main extends Component {
             innerwidth: window.visualViewport.width || document.documentElement.clientWidth,
             innerheight: window.visualViewport.height || document.documentElement.clientHeight
         })
-        window.scrollTo(0, 0);
         window.addEventListener("wheel", this.handleWay.bind(this));
         window.addEventListener("scroll", this.handleScroll.bind(this));
         window.addEventListener('resize', this.handleResize.bind(this));
