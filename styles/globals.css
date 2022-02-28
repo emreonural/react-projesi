@@ -13,7 +13,7 @@ body {
   overflow-x: hidden;
 }
 html {
-  overflow: auto;
+  overflow: hidden;
 }
 a {
   color: inherit;
@@ -257,7 +257,7 @@ a:hover {
     .row-sec1, .row-sec2 {
       min-height: -webkit-fill-available;
       height: 100vh;
-      height: calc(var(--vh, 1vh) * 100);
+      height: var(--vh);
       width: 100%;
       background: #0E1F50;
       position: relative;
