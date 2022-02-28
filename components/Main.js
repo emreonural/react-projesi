@@ -33,6 +33,12 @@ class Main extends Component {
         window.addEventListener('resize', this.handleResize.bind(this));
         // let vh = window.innerHeight * 0.01;
         // document.documentElement.style.setProperty('--vh', `${vh}px`);
+        if(this.state.innerwidth > 750){
+            document.querySelector('html').style.overflow = 'hidden';
+        }
+        else {
+            document.querySelector('html').style.overflow = 'auto';
+        }
        
     }
     handleTStart = (e) => {
@@ -57,6 +63,12 @@ class Main extends Component {
         this.setState({
             innerwidth: window.innerWidth,
         })
+        if(this.state.innerwidth > 750){
+            document.querySelector('html').style.overflow = 'hidden';
+        }
+        else {
+            document.querySelector('html').style.overflow = 'auto';
+        }
         // let vh = window.innerHeight * 0.01;
         // document.documentElement.style.setProperty('--vh', `${vh}px`);
     }
