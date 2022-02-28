@@ -31,7 +31,12 @@ class Whitepaper extends Component {
                             </div>
                         </Col>
                         <Col className="wp-right" xl={6} lg={6} md={12} sm={12} xs={12}>
+                        <Col className="d-xl-none d-lg-none d-md-block d-sm-block d-block h-100">
+                            <img className="professor-img-m" src="/assets/img/professor_download.svg"/>
+                        </Col>
+                        <Col className="d-xl-flex d-lg-flex d-md-none d-sm-none d-none">
                             <img className="professor-img" src="/assets/img/professor_download.svg"/>
+                        </Col>
                             <div className="bubble-body">
                                 <img className="bubble-1" src="/assets/img/bubbles1.svg"/>
                                 <img className="bubble-2" src="/assets/img/bubbles2.svg"/>

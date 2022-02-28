@@ -26,16 +26,92 @@ class Main extends Component {
             innerheight: window.visualViewport.height || document.documentElement.clientHeight
         })
         window.scrollTo(0, 0);
+        window.addEventListener("wheel", this.handleWay.bind(this));
         window.addEventListener("scroll", this.handleScroll.bind(this));
+        window.addEventListener('resize', this.handleResize.bind(this));
+        if(this.state.innerwidth > 750){
+            document.querySelector('html').style.overflow = 'hidden';
+        }
+        else {
             document.querySelector('html').style.overflow = 'auto';
+        }
     }
-    handleScroll = () => {
+    handleTStart = (e) => {
         this.setState({
-            page: Math.floor((window.scrollY)/this.state.innerheight),
+            touchxS: e.touches[0].clientX
         })
     }
+    handleTEnd = async (e) => {
+        await this.setState({
+            touchxE: e.changedTouches[0].clientX
+        });
+        if(this.state.touchxE - this.state.touchxS > 10 || this.state.touchxE - this.state.touchxS < -10){
+            this.handleWay({deltaY: this.state.touchxE - this.state.touchxS})
+        }
+        await this.setState({
+            touchxS: 0,
+            touchxE: 0
+        });
+    }
+
+    handleResize = async (e) => {
+        await this.setState({
+            innerwidth: window.visualViewport.width || document.documentElement.clientWidth,
+        })
+        if(this.state.innerwidth > 750){
+            document.querySelector('html').style.overflow = 'hidden';
+        }
+        else {
+            document.querySelector('html').style.overflow = 'auto';
+        }
+    }
+    sleep = (ms) => {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
+    handleWay = async (e) => {
+        if(this.state.innerwidth > 750){
+            if(this.state.canscroll){
+                if (e.deltaY < 0){
+                    await this.setState({
+                        page: this.state.page==0 ? 0 : (this.state.page - 1),
+                        canscroll: false,
+                    });
+                    for(var i = ((this.state.page + 1)*this.state.innerheight/10); i >= ((this.state.page)*this.state.innerheight/10); i--){
+                        await window.scrollTo(0, i*10);
+                        await this.sleep(7);
+                    }
+                }
+
+                else{
+                    await this.setState({
+                        page: this.state.page == 6 ? 6 : (this.state.page + 1),
+                        canscroll: false,
+                    });
+                    for(var i = ((this.state.page - 1)*this.state.innerheight/10); i <= ((this.state.page)*this.state.innerheight/10); i++){
+                        await window.scrollTo(0, i*10);
+                        await this.sleep(7);
+                    }
+                }
+                await this.sleep(500);
+                this.setState({
+                    canscroll: true,
+                })
+            }
+        }
+    }
+    handleScroll = () => {
+        if(this.state.innerwidth < 750){
+            this.setState({
+                page: Math.floor((window.scrollY)/this.state.innerheight),
+            })
+        }
+    }
     componentWillUnmount() {
+        window.removeEventListener("wheel", this.handleWay.bind(this));
         window.removeEventListener("scroll", this.handleScroll.bind(this));
+        window.removeEventListener('resize', this.handleResize.bind(this));
+        // window.removeEventListener("touchstart", this.handleTStart.bind(this));
+        // window.removeEventListener("touchend", this.handleTEnd.bind(this));
     }
     handleNavigate = async (ind) => {
         await this.setState({

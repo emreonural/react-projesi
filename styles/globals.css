@@ -1147,6 +1147,7 @@ a:hover {
     transform: translate(-110%);
     height: auto;
     z-index: 9;
+    height: 50%;
   }
   .active-3 .wp-left {
     transform: translate(0%);
@@ -1173,6 +1174,8 @@ a:hover {
     height: auto;
     overflow: hidden;
     margin-top: 3%;
+    min-height: 50%;
+
   }
   .active-3 .wp-right {
     transform: translate(0%);
@@ -1181,6 +1184,12 @@ a:hover {
     width: 80%;
     height: auto;
     margin-bottom: auto;
+    position: relative;
+    display: flex;
+  }
+  .professor-img-m {
+    height: 80%;
+    margin: auto;
     position: relative;
     display: flex;
   }
@@ -1532,6 +1541,7 @@ a:hover {
     align-items: center;
     color: #fff;
     padding: 0 4%;
+    width: 100%;
   }
   .m-left-statistic img, .m-right-statistic img {
     width: 100%;
@@ -1731,8 +1741,8 @@ a:hover {
   /* contacts */
 
   .contact-body {
-    height: 75%;
-    display: grid;
+    height: 65%;
+    display: block;
     align-content: start;
   }
   .input-body-1 {
