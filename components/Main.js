@@ -19,13 +19,6 @@ class Main extends Component {
             touchxE: 0,
             canscroll: true,
         }
-        setTimeout(() => {
-            this.setState({
-                innerwidth: window.visualViewport.width || screen.width,
-                innerheight: window.visualViewport.height
-            })
-        }, 250);
-        
     }
     componentDidMount() {
         this.setState({
