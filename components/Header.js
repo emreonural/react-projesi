@@ -59,7 +59,7 @@ class Header extends Component {
                             <p>Stake</p>
                         </a>
                         <div id="hamburger" 
-                            class={(this.state.opened ? 'cross' : '' ) + " mobile-header-btn d-xl-none d-lg-none d-flex"}
+                            className={(this.state.opened ? 'cross' : '' ) + " mobile-header-btn d-xl-none d-lg-none d-flex"}
                             onClick={this.mobileHeader}
                         >
                             <svg id="icon" viewBox="0 0 800 600">

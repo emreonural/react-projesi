@@ -9,10 +9,12 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   scroll-behavior: smooth;
-  overflow: hidden;
   height: auto;
+  overflow-x: hidden;
 }
-
+html {
+  overflow: hidden;
+}
 a {
   color: inherit;
   text-decoration: none;
@@ -1166,7 +1168,7 @@ a:hover {
     transform: translate(0%);
   }
   .professor-img {
-    width: 90%;
+    width: 80%;
     height: auto;
     margin-bottom: auto;
     position: relative;

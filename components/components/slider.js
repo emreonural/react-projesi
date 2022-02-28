@@ -42,10 +42,9 @@ class Slider extends Component {
                     dotListClass="custom-dot-list-style"
                     itemClass="carousel-item-padding-40-px"
                 >
-                    {this.props.arr.map(item => {
+                    {this.props.arr.map((item, index) => {
                         return (
-                            <>
-                                <Col className="partner-item">
+                                <Col className="partner-item" key={index}>
                                     <img
                                         draggable={false}
                                         style={{ width: "100%", height: "100%" }}
@@ -53,7 +52,6 @@ class Slider extends Component {
                                     />
                                     <span>{item.name}</span>
                                 </Col>
-                            </>
                         );
                     })}
                 </Carousel>
