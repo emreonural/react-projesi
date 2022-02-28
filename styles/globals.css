@@ -13,7 +13,7 @@ body {
   overflow-x: hidden;
 }
 html {
-  overflow: hidden;
+  overflow: auto;
 }
 a {
   color: inherit;
@@ -1723,7 +1723,7 @@ a:hover {
   /* contacts */
 
   .contact-body {
-    height: 65%;
+    height: 75%;
     display: grid;
     align-content: start;
   }
