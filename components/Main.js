@@ -38,7 +38,7 @@ class Main extends Component {
         else {
             document.querySelector('html').style.overflow = 'auto';
         }
-       
+        console.log(this.state.innerwidth);
     }
     handleTStart = (e) => {
         this.setState({
