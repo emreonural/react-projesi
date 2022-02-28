@@ -25,9 +25,9 @@ class Main extends Component {
             innerwidth: window.visualViewport.width || document.documentElement.clientWidth,
             innerheight: window.visualViewport.height || document.documentElement.clientHeight
         })
-        window.addEventListener("wheel", this.handleWay.bind(this));
+        // window.addEventListener("wheel", this.handleWay.bind(this));
         window.addEventListener("scroll", this.handleScroll.bind(this));
-        window.addEventListener('resize', this.handleResize.bind(this));
+        // window.addEventListener('resize', this.handleResize.bind(this));
         //window.addEventListener("touchstart", this.handleTStart.bind(this));
         //window.addEventListener("touchend", this.handleTEnd.bind(this));
         // let vh = window.innerHeight * 0.01;
@@ -38,7 +38,6 @@ class Main extends Component {
         else {
             document.querySelector('html').style.overflow = 'auto';
         }
-        console.log(this.state.innerwidth);
     }
     handleTStart = (e) => {
         this.setState({
@@ -106,16 +105,14 @@ class Main extends Component {
         }
     }
     handleScroll = () => {
-        if(this.state.innerwidth < 750){
             this.setState({
                 page: Math.floor((window.scrollY)/this.state.innerheight),
             })
-        }
     }
     componentWillUnmount() {
-        window.removeEventListener("wheel", this.handleWay.bind(this));
+        // window.removeEventListener("wheel", this.handleWay.bind(this));
         window.removeEventListener("scroll", this.handleScroll.bind(this));
-        window.removeEventListener('resize', this.handleResize.bind(this));
+        // window.removeEventListener('resize', this.handleResize.bind(this));
         // window.removeEventListener("touchstart", this.handleTStart.bind(this));
         // window.removeEventListener("touchend", this.handleTEnd.bind(this));
     }
