@@ -33,7 +33,7 @@ class Main extends Component {
         window.addEventListener('resize', this.handleResize.bind(this));
         // let vh = window.innerHeight * 0.01;
         // document.documentElement.style.setProperty('--vh', `${vh}px`);
-        if(this.state.innerwidth > 750){
+        if(window.innerWidth > 750){
             document.querySelector('html').style.overflow = 'hidden';
         }
         else {
@@ -59,8 +59,8 @@ class Main extends Component {
         });
     }
 
-    handleResize = (e) => {
-        this.setState({
+    handleResize = async (e) => {
+        await this.setState({
             innerwidth: window.innerWidth,
         })
         if(this.state.innerwidth > 750){
@@ -77,10 +77,8 @@ class Main extends Component {
     }
     handleWay = async (e) => {
         if(this.state.innerwidth > 750){
-            document.querySelector('html').style.overflow = 'hidden';
             if(this.state.canscroll){
                 if (e.deltaY < 0){
-
                     await this.setState({
                         page: this.state.page==0 ? 0 : (this.state.page - 1),
                         canscroll: false,
@@ -107,10 +105,6 @@ class Main extends Component {
                 })
             }
         }
-        else {
-            document.querySelector('html').style.overflow = 'auto';
-        }
-
     }
     handleScroll = () => {
         if(this.state.innerwidth < 750){
