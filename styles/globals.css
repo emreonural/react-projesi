@@ -35,6 +35,7 @@ a:hover {
     padding-left: 2vw;
     padding-right: 2vw;
     margin-top: 2vh;
+    overflow: hidden;
   }
   .h-logo-area {
     display: flex;
