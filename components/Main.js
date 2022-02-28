@@ -20,8 +20,8 @@ class Main extends Component {
             canscroll: true,
         }
     }
-    componentDidMount() {
-        this.setState({
+    async componentDidMount() {
+        await this.setState({
             innerwidth: window.visualViewport.width || screen.width,
             innerheight: window.visualViewport.height
         })
@@ -33,7 +33,7 @@ class Main extends Component {
         window.addEventListener('resize', this.handleResize.bind(this));
         // let vh = window.innerHeight * 0.01;
         // document.documentElement.style.setProperty('--vh', `${vh}px`);
-        if(window.visualViewport.width || screen.width > 750){
+        if(this.state.innerwidth > 750){
             document.querySelector('html').style.overflow = 'hidden';
         }
         else {
