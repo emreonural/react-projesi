@@ -47,7 +47,7 @@ a:hover {
     height: auto;
     width: 100%;
     max-width: 250px;
-    min-width: 124px;
+    min-width: 100px;
   }
   .h-title-area {
     display: flex;
@@ -96,6 +96,7 @@ a:hover {
     border-radius: 16px;
     transition: .2s linear all;
     margin-left: auto;
+    min-width: 65px;
   }
   a.header-button:nth-child(1):hover {
     background: linear-gradient(180deg, rgb(172, 69, 254) 100%, rgb(79, 152, 232) 100%);
