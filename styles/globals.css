@@ -257,11 +257,10 @@ a:hover {
     .row-sec1, .row-sec2 {
       min-height: -webkit-fill-available;
       height: 100vh;
-      /* height: calc(var(--vh, 1vh) * 100); */
+      height: calc(var(--vh, 1vh) * 100);
       width: 100%;
       background: #0E1F50;
       position: relative;
-      overflow: hidden;
     }
     .row-sec1::before, .row-sec2::before {
       content: '';
@@ -1724,7 +1723,7 @@ a:hover {
   /* contacts */
 
   .contact-body {
-    height: 75%;
+    height: 65%;
     display: grid;
     align-content: start;
   }
