@@ -217,7 +217,7 @@ a:hover {
   }
   #hamburger {
     position: absolute;
-    right: 0;
+    right: -20px;
     z-index: 9999;
   }
   #hamburger path {
@@ -1164,6 +1164,7 @@ a:hover {
     transform: translate(110%);
     height: auto;
     overflow: hidden;
+    margin-top: 3%;
   }
   .active-3 .wp-right {
     transform: translate(0%);
@@ -1208,7 +1209,7 @@ a:hover {
     display: flex;
     align-items: center;
     position: relative;
-    bottom: -12%;
+    margin-top: 5%;
     width: 100%;
   }
   .wp-button {
@@ -1783,7 +1784,7 @@ a:hover {
     font-size: 20px;
     min-height: 48px;
     max-width: 200px;
-    margin: 70px auto;
+    margin: 0px auto;
   }
   .contact-button:hover {
     color: #fff;
