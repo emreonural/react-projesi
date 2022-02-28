@@ -6,6 +6,7 @@ import Tokenomics from "./sections/Tokenomics";
 import Whitepaper from "./sections/Whitepaper";
 import Exchange from "./sections/Exchance";
 import Contact from "./sections/Contact";
+import innerHeight from "ios-inner-height";
 
 class Main extends Component {
     constructor(props){
@@ -23,21 +24,16 @@ class Main extends Component {
     async componentDidMount() {
         await this.setState({
             innerwidth: window.visualViewport.width || document.documentElement.clientWidth,
-            innerheight: window.visualViewport.height || document.documentElement.clientHeight
+            innerheight: innerHeight()
         })
-        // window.addEventListener("wheel", this.handleWay.bind(this));
+        window.addEventListener("wheel", this.handleWay.bind(this));
         window.addEventListener("scroll", this.handleScroll.bind(this));
-        // window.addEventListener('resize', this.handleResize.bind(this));
-        //window.addEventListener("touchstart", this.handleTStart.bind(this));
-        //window.addEventListener("touchend", this.handleTEnd.bind(this));
-        // let vh = window.innerHeight * 0.01;
-        // document.documentElement.style.setProperty('--vh', `${vh}px`);
-        if(this.state.innerwidth > 750){
-            document.querySelector('html').style.overflow = 'hidden';
-        }
-        else {
-            document.querySelector('html').style.overflow = 'auto';
-        }
+        window.addEventListener('resize', this.handleResize.bind(this));
+        window.addEventListener("touchstart", this.handleTStart.bind(this));
+        window.addEventListener("touchend", this.handleTEnd.bind(this));
+        let vh = innerHeight();
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+        
     }
     handleTStart = (e) => {
         this.setState({
@@ -48,7 +44,8 @@ class Main extends Component {
         await this.setState({
             touchxE: e.changedTouches[0].clientX
         });
-        if(this.state.touchxE - this.state.touchxS > 10 || this.state.touchxE - this.state.touchxS < -10){
+        if(this.state.touchxE - this.state.touchxS < 10 || this.state.touchxE - this.state.touchxS > -10){
+            console.log(this.state.touchxE - this.state.touchxS)
             this.handleWay({deltaY: this.state.touchxE - this.state.touchxS})
         }
         await this.setState({
@@ -67,54 +64,54 @@ class Main extends Component {
         else {
             document.querySelector('html').style.overflow = 'auto';
         }
-        // let vh = window.innerHeight * 0.01;
-        // document.documentElement.style.setProperty('--vh', `${vh}px`);
+        let vh = innerHeight();
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
     }
     sleep = (ms) => {
         return new Promise(resolve => setTimeout(resolve, ms));
     }
     handleWay = async (e) => {
-        if(this.state.innerwidth > 750){
-            if(this.state.canscroll){
-                if (e.deltaY < 0){
-                    await this.setState({
-                        page: this.state.page==0 ? 0 : (this.state.page - 1),
-                        canscroll: false,
-                    });
-                    for(var i = ((this.state.page + 1)*this.state.innerheight/10); i >= ((this.state.page)*this.state.innerheight/10); i--){
-                        await window.scrollTo(0, i*10);
-                        await this.sleep(7);
-                    }
+        if(this.state.canscroll){
+            if (e.deltaY < 0){
+                await this.setState({
+                    page: this.state.page==0 ? 0 : (this.state.page - 1),
+                    canscroll: false,
+                });
+                for(var i = ((this.state.page + 1)*this.state.innerheight/10); i >= ((this.state.page)*this.state.innerheight/10); i--){
+                    await window.scrollTo(0, i*10);
+                    await this.sleep(7);
                 }
-
-                else{
-                    await this.setState({
-                        page: this.state.page == 6 ? 6 : (this.state.page + 1),
-                        canscroll: false,
-                    });
-                    for(var i = ((this.state.page - 1)*this.state.innerheight/10); i <= ((this.state.page)*this.state.innerheight/10); i++){
-                        await window.scrollTo(0, i*10);
-                        await this.sleep(7);
-                    }
-                }
-                await this.sleep(500);
-                this.setState({
-                    canscroll: true,
-                })
             }
+
+            else{
+                await this.setState({
+                    page: this.state.page == 6 ? 6 : (this.state.page + 1),
+                    canscroll: false,
+                });
+                for(var i = ((this.state.page - 1)*this.state.innerheight/10); i <= ((this.state.page)*this.state.innerheight/10); i++){
+                    await window.scrollTo(0, i*10);
+                    await this.sleep(7);
+                }
+            }
+            await this.sleep(500);
+            this.setState({
+                canscroll: true,
+            })
         }
     }
     handleScroll = () => {
+        if(this.state.innerwidth < 750){
             this.setState({
                 page: Math.floor((window.scrollY)/this.state.innerheight),
             })
+        }
     }
     componentWillUnmount() {
-        // window.removeEventListener("wheel", this.handleWay.bind(this));
-        window.removeEventListener("scroll", this.handleScroll.bind(this));
-        // window.removeEventListener('resize', this.handleResize.bind(this));
-        // window.removeEventListener("touchstart", this.handleTStart.bind(this));
-        // window.removeEventListener("touchend", this.handleTEnd.bind(this));
+        window.removeEventListener("wheel", this.handleWay.bind(this));
+        // window.removeEventListener("scroll", this.handleScroll.bind(this));
+        window.removeEventListener('resize', this.handleResize.bind(this));
+        window.removeEventListener("touchstart", this.handleTStart.bind(this));
+        window.removeEventListener("touchend", this.handleTEnd.bind(this));
     }
     handleNavigate = async (ind) => {
         await this.setState({
