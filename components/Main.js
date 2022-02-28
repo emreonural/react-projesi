@@ -19,10 +19,17 @@ class Main extends Component {
             touchxE: 0,
             canscroll: true,
         }
+        setTimeout(() => {
+            this.setState({
+                innerwidth: window.visualViewport.width || screen.width,
+                innerheight: window.visualViewport.height
+            })
+        }, 250);
+        
     }
     componentDidMount() {
         this.setState({
-            innerwidth: window.visualViewport.width,
+            innerwidth: window.visualViewport.width || screen.width,
             innerheight: window.visualViewport.height
         })
         window.scrollTo(0, 0);
@@ -33,7 +40,7 @@ class Main extends Component {
         window.addEventListener('resize', this.handleResize.bind(this));
         // let vh = window.innerHeight * 0.01;
         // document.documentElement.style.setProperty('--vh', `${vh}px`);
-        if(window.visualViewport.width > 750){
+        if(window.visualViewport.width || screen.width > 750){
             document.querySelector('html').style.overflow = 'hidden';
         }
         else {
@@ -61,7 +68,7 @@ class Main extends Component {
 
     handleResize = async (e) => {
         await this.setState({
-            innerwidth: window.visualViewport.width,
+            innerwidth: window.visualViewport.width || screen.width,
         })
         if(this.state.innerwidth > 750){
             document.querySelector('html').style.overflow = 'hidden';
