@@ -24,15 +24,7 @@ class Main extends Component {
         await this.setState({
             innerwidth: window.visualViewport.width || screen.width,
             innerheight: window.visualViewport.height
-        })
-        window.scrollTo(0, 0);
-        window.addEventListener("wheel", this.handleWay.bind(this));
-        window.addEventListener("scroll", this.handleScroll.bind(this));
-        //window.addEventListener("touchstart", this.handleTStart.bind(this));
-        //window.addEventListener("touchend", this.handleTEnd.bind(this));
-        window.addEventListener('resize', this.handleResize.bind(this));
-        // let vh = window.innerHeight * 0.01;
-        // document.documentElement.style.setProperty('--vh', `${vh}px`);
+        });
         if(this.state.innerwidth > 750){
             document.querySelector('html').style.overflow = 'hidden';
         }
@@ -40,11 +32,20 @@ class Main extends Component {
             document.querySelector('html').style.overflow = 'auto';
         }
        
+        window.scrollTo(0, 0);
+        window.addEventListener("wheel", this.handleWay.bind(this));
+        window.addEventListener("scroll", this.handleScroll.bind(this));
+        window.addEventListener("resize", this.handleResize.bind(this));
+
+        //window.addEventListener("touchstart", this.handleTStart.bind(this));
+        //window.addEventListener("touchend", this.handleTEnd.bind(this));
+        // let vh = window.innerHeight * 0.01;
+        // document.documentElement.style.setProperty('--vh', `${vh}px`);
     }
     handleTStart = (e) => {
         this.setState({
             touchxS: e.touches[0].clientX
-        })
+        });
     }
     handleTEnd = async (e) => {
         await this.setState({
@@ -63,12 +64,15 @@ class Main extends Component {
         await this.setState({
             innerwidth: window.visualViewport.width || screen.width,
         })
-        if(this.state.innerwidth > 750){
-            document.querySelector('html').style.overflow = 'hidden';
-        }
-        else {
-            document.querySelector('html').style.overflow = 'auto';
-        }
+        setTimeout(() => {
+            if(this.state.innerwidth > 750){
+                document.querySelector('html').style.overflow = 'hidden';
+            }
+            else {
+                document.querySelector('html').style.overflow = 'auto';
+            }
+        }, 250);
+        
         // let vh = window.innerHeight * 0.01;
         // document.documentElement.style.setProperty('--vh', `${vh}px`);
     }
