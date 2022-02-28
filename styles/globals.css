@@ -261,6 +261,7 @@ a:hover {
       width: 100%;
       background: #0E1F50;
       position: relative;
+      overflow: hidden;
     }
     .row-sec1::before, .row-sec2::before {
       content: '';
