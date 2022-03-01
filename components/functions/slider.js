@@ -37,7 +37,7 @@ class Slider extends Component {
                     infinite={true}
                     autoPlaySpeed={3000}
                     containerClass="carousel-container"
-                    removeArrowOnDeviceType={["mobile", "desktop", "tablet"]}
+                    removeArrowOnDeviceType={["mobile"]}
                     deviceType={["desktop"]}
                     dotListClass="custom-dot-list-style"
                     itemClass="carousel-item-padding-40-px"
