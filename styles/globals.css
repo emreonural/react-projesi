@@ -1505,7 +1505,7 @@ a:hover {
   }
   .m-tokenomics-left img{
     height: 100%;
-    left: -120vw;
+    right: 78vw;
     top: -5%;
     width: auto;
     position: absolute;
@@ -1652,7 +1652,6 @@ a:hover {
     border-left: 4px solid #fff!important;
     transform: rotate(-45deg);
     top: 25%;
-    right: 100%;
 }
 
   .react-multiple-carousel__arrow--right:before {
@@ -1664,8 +1663,7 @@ a:hover {
     border-right: 4px solid #fff!important;
     transform: rotate(45deg);
     top: 25%;
-    left: 100%;
-}
+  }
   .react-multi-carousel-track {
       list-style: outside none none;
       padding: 0px;
@@ -1688,11 +1686,11 @@ a:hover {
   }
   .react-multiple-carousel__arrow--right {
       position: relative;
-      right: calc(4% + 1px);
+      right: 0%;
   }
   .react-multiple-carousel__arrow--left {
       position: relative;
-      left: calc(4% + 1px);
+      left: 0%;
   }
   .react-multiple-carousel__arrow {
       position: absolute;
