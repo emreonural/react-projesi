@@ -1188,7 +1188,7 @@ a:hover {
     display: flex;
   }
   .professor-img-m {
-    height: 28vh;
+    height: 26vh;
     margin: auto;
     display: flex;
     position: absolute;
@@ -1505,7 +1505,7 @@ a:hover {
   }
   .m-tokenomics-left img{
     height: 100%;
-    left: -118vw;
+    left: -120vw;
     top: -5%;
     width: auto;
     position: absolute;
