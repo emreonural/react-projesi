@@ -1648,8 +1648,8 @@ a:hover {
     width: 50%;
     height: 50%;
     position: absolute;
-    border-top: 2px solid #fff;
-    border-left: 4px solid #fff;
+    border-top: 2px solid #fff!important;
+    border-left: 4px solid #fff!important;
     transform: rotate(-45deg);
     top: 25%;
     right: 100%;
@@ -1660,8 +1660,8 @@ a:hover {
     width: 50%;
     height: 50%;
     position: absolute;
-    border-top: 2px solid #fff;
-    border-right: 4px solid #fff;
+    border-top: 2px solid #fff!important;
+    border-right: 4px solid #fff!important;
     transform: rotate(45deg);
     top: 25%;
     left: 100%;
