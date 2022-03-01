@@ -1408,7 +1408,7 @@ a:hover {
   }
   .tokenomics-right {
     display: grid;
-    height: 90%;
+    height: 80%;
     position: relative;
     z-index: 1;
     padding: 3%;
@@ -1747,10 +1747,11 @@ a:hover {
   /* contacts */
 
   .contact-body {
-    height: 65%;
+    height: 75%;
     display: block;
     align-content: start;
   }
+  
   .input-body-1 {
     padding-left: 15px;
     padding-right: 15px;
@@ -1846,14 +1847,15 @@ a:hover {
 
 /* footer */
 footer {
-  position: absolute;
-  height: 12vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  bottom: 0;
-  width: 100%;
-}
+    position: relative;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom: 0;
+    width: 100%;
+  }
+
 .footer-body {
   height: 100%;
   display: flex;
