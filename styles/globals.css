@@ -1890,4 +1890,10 @@ footer {
 .social-button:hover {
   transform: scale(1.05);
 }
+
+.footer-body {
+  height: 100%;
+  top: 3vh;
+}
+
 /* end of footer */
