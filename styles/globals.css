@@ -1147,7 +1147,7 @@ a:hover {
     transform: translate(-110%);
     height: auto;
     z-index: 9;
-    height: 50%;
+    height: auto;
   }
   .active-3 .wp-left {
     transform: translate(0%);
@@ -1173,7 +1173,7 @@ a:hover {
     transform: translate(110%);
     height: auto;
     overflow: hidden;
-    margin-top: 3%;
+    margin: auto;
     min-height: 50%;
 
   }
@@ -1188,10 +1188,16 @@ a:hover {
     display: flex;
   }
   .professor-img-m {
-    height: 80%;
+    height: 30vh;
     margin: auto;
-    position: relative;
     display: flex;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    min-height: 30vh;
   }
   .bubble-body {
     position: absolute;
