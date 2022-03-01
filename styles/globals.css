@@ -1642,6 +1642,30 @@ a:hover {
       overflow: hidden;
       position: relative;
   }
+
+  .react-multiple-carousel__arrow--left:before {
+    content: "";
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    border-top: 2px solid #fff;
+    border-left: 4px solid #fff;
+    transform: rotate(-45deg);
+    top: 25%;
+    right: 100%;
+}
+
+  .react-multiple-carousel__arrow--right:before {
+    content: "";
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    border-top: 2px solid #fff;
+    border-right: 4px solid #fff;
+    transform: rotate(45deg);
+    top: 25%;
+    left: 100%;
+}
   .react-multi-carousel-track {
       list-style: outside none none;
       padding: 0px;
@@ -1751,7 +1775,7 @@ a:hover {
     display: block;
     align-content: start;
   }
-  
+
   .input-body-1 {
     padding-left: 15px;
     padding-right: 15px;
@@ -1901,6 +1925,7 @@ footer {
   transform: scale(1.05);
 } */
 /* end of footer */
+
 
 /* 13 Inch Design */
 
