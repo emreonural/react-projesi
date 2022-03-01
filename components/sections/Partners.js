@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Col, Row } from "react-bootstrap";
-import Slider from "../components/slider";
+import Slider from "../functions/slider";
 
 const partners = [
     {

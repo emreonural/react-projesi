@@ -1868,6 +1868,9 @@ footer {
   margin-right: 5%;
   max-width: 30vw;
 }
+.footer-logo-area {
+  max-width: 30vw;
+}
 .footer-logo-area a {
   display: flex;
   height: auto;
@@ -1883,17 +1886,12 @@ footer {
   height: auto;
   display: flex;
   transition: .2s linear all;
+  max-width: 13vw;
 }
 .social-button img {
   max-width: 10vw;
 }
-.social-button:hover {
+/* .social-button:hover {
   transform: scale(1.05);
-}
-
-.footer-body {
-  height: 100%;
-  top: 3vh;
-}
-
+} */
 /* end of footer */

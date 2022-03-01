@@ -9,7 +9,7 @@ class Contact extends Component {
     render(){
         return (
             <>
-                <Row className={this.props.active + " row-sec1 m-0"}>
+                <Row className={this.props.active + " row-sec1 m-0 d-block"}>
                     <Col md={12} className="tokenomics-title">
                         <span>CONTACT US</span>
                     </Col>
