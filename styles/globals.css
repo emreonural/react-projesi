@@ -1926,6 +1926,15 @@ footer {
 } */
 /* end of footer */
 
+.exchance-sec-1 .text-area .exc-title, .exchance-sec-2 .text-area .exc-title, .exchance-sec-3 .text-area .exc-title {
+    width: 100%!important;
+
+}
+
+.exchance-sec-1 .text-area .ext-subtext, .exchance-sec-2 .text-area .ext-subtext, .exchance-sec-3 .text-area .ext-subtext {
+    font-size: calc(.3vw + .3vh + 6px)!important;
+}
+
 
 /* 13 Inch Design */
 
