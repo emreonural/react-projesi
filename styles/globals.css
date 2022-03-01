@@ -1188,7 +1188,7 @@ a:hover {
     display: flex;
   }
   .professor-img-m {
-    height: 30vh;
+    height: 28vh;
     margin: auto;
     display: flex;
     position: absolute;
@@ -1197,7 +1197,7 @@ a:hover {
     left: 0;
     right: 0;
     width: 100%;
-    min-height: 30vh;
+    min-height: initial;
   }
   .bubble-body {
     position: absolute;
@@ -1505,7 +1505,7 @@ a:hover {
   }
   .m-tokenomics-left img{
     height: 100%;
-    left: -115vw;
+    left: -118vw;
     top: -5%;
     width: auto;
     position: absolute;
@@ -1890,6 +1890,10 @@ footer {
 }
 .social-button img {
   max-width: 10vw;
+}
+
+.footer-logo-area img {
+    max-width: 30vw!important;
 }
 /* .social-button:hover {
   transform: scale(1.05);
