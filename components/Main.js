@@ -150,6 +150,11 @@ class Main extends Component {
             window.scrollTo(0, this.state.page*this.state.innerheight);
         }
     }
+    handleMobilenav = (ind) => {
+        this.setState({
+            page: ind,
+        });
+    }
     render(){
         return (
             <>
@@ -162,14 +167,14 @@ class Main extends Component {
                     <span onClick={this.handleNavigate.bind(this, 5)} className={this.state.page == 5 ? "navigator active" : "navigator"}></span>
                     <span onClick={this.handleNavigate.bind(this, 6)} className={this.state.page == 6 ? "navigator active" : "navigator"}></span>
                 </div>
-                <div className="navigators d-block d-sm-block d-xs-block d-xl-block d-lg-block d-md-block">
-                    <a href="#Banner" className={this.state.page == 0 ? "navigator active" : "navigator"}></a>
-                    <a href="#Exchance" className={this.state.page == 1 ? "navigator active" : "navigator"}></a>
-                    <a href="#Roadmap" className={this.state.page == 2 ? "navigator active" : "navigator"}></a>
-                    <a href="#Whitepaper" className={this.state.page == 3 ? "navigator active" : "navigator"}></a>
-                    <a href="#Tokenomics" className={this.state.page == 4 ? "navigator active" : "navigator"}></a>
-                    <a href="#Partners" className={this.state.page == 5 ? "navigator active" : "navigator"}></a>
-                    <a href="#Contact" className={this.state.page == 6 ? "navigator active" : "navigator"}></a>
+                <div className="navigators d-block d-sm-block d-xs-block d-xl-none d-lg-none d-md-none">
+                    <a onClick={this.handleMobilenav.bind(this, 0)} href="#Banner" className={this.state.page == 0 ? "navigator active" : "navigator"}></a>
+                    <a onClick={this.handleMobilenav.bind(this, 1)} href="#Exchance" className={this.state.page == 1 ? "navigator active" : "navigator"}></a>
+                    <a onClick={this.handleMobilenav.bind(this, 2)} href="#Roadmap" className={this.state.page == 2 ? "navigator active" : "navigator"}></a>
+                    <a onClick={this.handleMobilenav.bind(this, 3)} href="#Whitepaper" className={this.state.page == 3 ? "navigator active" : "navigator"}></a>
+                    <a onClick={this.handleMobilenav.bind(this, 4)} href="#Tokenomics" className={this.state.page == 4 ? "navigator active" : "navigator"}></a>
+                    <a onClick={this.handleMobilenav.bind(this, 5)} href="#Partners" className={this.state.page == 5 ? "navigator active" : "navigator"}></a>
+                    <a onClick={this.handleMobilenav.bind(this, 6)} href="#Contact" className={this.state.page == 6 ? "navigator active" : "navigator"}></a>
                 </div>
 
                 <Banner
