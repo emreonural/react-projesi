@@ -54,7 +54,7 @@ class Tokenomics extends Component {
     render(){
         return (
             <>
-                <Row className={this.props.active + " row-sec1 m-0"}>
+                <Row className={this.props.active + " row-sec1 m-0"} id="Tokenomics">
                     <Col md={12} className="tokenomics-title">
                         <span>TOKENOMICS</span>
                     </Col>

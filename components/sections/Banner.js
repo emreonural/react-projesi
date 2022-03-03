@@ -9,7 +9,7 @@ class Banner extends Component {
     render(){
         return (
             <>
-                <Row className={this.props.active + " row-sec1 m-0"}>
+                <Row className={this.props.active + " row-sec1 m-0"} id="Banner">
                     <Col md={12} className="banner-body d-xl-flex d-lg-flex d-md-flex d-sm-block d-block">
                         <Col className="banner-left" xl={6} lg={6} md={6} sm={12} xs={12}>
                             <span className="subtraction-body">

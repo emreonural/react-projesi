@@ -36,23 +36,23 @@ class Main extends Component {
             document.querySelector('html').style.overflow = 'auto';
         }
     }
-    handleTStart = (e) => {
-        this.setState({
-            touchxS: e.touches[0].clientX
-        })
-    }
-    handleTEnd = async (e) => {
-        await this.setState({
-            touchxE: e.changedTouches[0].clientX
-        });
-        if(this.state.touchxE - this.state.touchxS > 10 || this.state.touchxE - this.state.touchxS < -10){
-            this.handleWay({deltaY: this.state.touchxE - this.state.touchxS})
-        }
-        await this.setState({
-            touchxS: 0,
-            touchxE: 0
-        });
-    }
+    // handleTStart = (e) => {
+    //     this.setState({
+    //         touchxS: e.touches[0].clientX
+    //     })
+    // }
+    // handleTEnd = async (e) => {
+    //     await this.setState({
+    //         touchxE: e.changedTouches[0].clientX
+    //     });
+    //     if(this.state.touchxE - this.state.touchxS > 10 || this.state.touchxE - this.state.touchxS < -10){
+    //         this.handleWay({deltaY: this.state.touchxE - this.state.touchxS})
+    //     }
+    //     await this.setState({
+    //         touchxS: 0,
+    //         touchxE: 0
+    //     });
+    // }
 
     handleResize = async (e) => {
         await this.setState({
@@ -114,39 +114,46 @@ class Main extends Component {
         // window.removeEventListener("touchend", this.handleTEnd.bind(this));
     }
     handleNavigate = async (ind) => {
-        
-        if(this.state.canscroll){
-            if (ind < this.state.page){
-                await this.setState({
-                    page: ind,
-                    canscroll: false,
-                });
-                for(var i = ((this.state.page + 1)*this.state.innerheight/10); i >= ((this.state.page)*this.state.innerheight/10); i--){
-                    await window.scrollTo(0, i*10);
-                    await this.sleep(7);
+        if(this.state.innerwidth > 750){
+            if(this.state.canscroll){
+                if (ind < this.state.page){
+                    await this.setState({
+                        page: ind,
+                        canscroll: false,
+                    });
+                    for(var i = ((this.state.page + 1)*this.state.innerheight/10); i >= ((this.state.page)*this.state.innerheight/10); i--){
+                        await window.scrollTo(0, i*10);
+                        await this.sleep(7);
+                    }
                 }
-            }
-
-            else{
-                await this.setState({
-                    canscroll: false,
-                    page: ind,
-                });
-                for(var i = ((this.state.page - 1)*this.state.innerheight/10); i <= ((this.state.page)*this.state.innerheight/10); i++){
-                    await window.scrollTo(0, i*10);
-                    await this.sleep(7);
+    
+                else{
+                    await this.setState({
+                        canscroll: false,
+                        page: ind,
+                    });
+                    for(var i = ((this.state.page - 1)*this.state.innerheight/10); i <= ((this.state.page)*this.state.innerheight/10); i++){
+                        await window.scrollTo(0, i*10);
+                        await this.sleep(7);
+                    }
                 }
+                await this.sleep(500);
+                this.setState({
+                    canscroll: true,
+                })
             }
-            await this.sleep(500);
-            this.setState({
-                canscroll: true,
-            })
+        }
+        else {
+            await this.setState({
+                page: ind,
+            });
+            window.scrollTo(0, this.state.page*this.state.innerheight);
         }
     }
     render(){
         return (
             <>
-                <div className="navigators">
+                <div className="navigators d-none d-xl-block d-lg-block d-md-block">
                     <span onClick={this.handleNavigate.bind(this, 0)} className={this.state.page == 0 ? "navigator active" : "navigator"}></span>
                     <span onClick={this.handleNavigate.bind(this, 1)} className={this.state.page == 1 ? "navigator active" : "navigator"}></span>
                     <span onClick={this.handleNavigate.bind(this, 2)} className={this.state.page == 2 ? "navigator active" : "navigator"}></span>
@@ -154,6 +161,15 @@ class Main extends Component {
                     <span onClick={this.handleNavigate.bind(this, 4)} className={this.state.page == 4 ? "navigator active" : "navigator"}></span>
                     <span onClick={this.handleNavigate.bind(this, 5)} className={this.state.page == 5 ? "navigator active" : "navigator"}></span>
                     <span onClick={this.handleNavigate.bind(this, 6)} className={this.state.page == 6 ? "navigator active" : "navigator"}></span>
+                </div>
+                <div className="navigators d-block d-sm-block d-xs-block d-xl-block d-lg-block d-md-block">
+                    <a href="#Banner" className={this.state.page == 0 ? "navigator active" : "navigator"}></a>
+                    <a href="#Exchance" className={this.state.page == 1 ? "navigator active" : "navigator"}></a>
+                    <a href="#Roadmap" className={this.state.page == 2 ? "navigator active" : "navigator"}></a>
+                    <a href="#Whitepaper" className={this.state.page == 3 ? "navigator active" : "navigator"}></a>
+                    <a href="#Tokenomics" className={this.state.page == 4 ? "navigator active" : "navigator"}></a>
+                    <a href="#Partners" className={this.state.page == 5 ? "navigator active" : "navigator"}></a>
+                    <a href="#Contact" className={this.state.page == 6 ? "navigator active" : "navigator"}></a>
                 </div>
 
                 <Banner

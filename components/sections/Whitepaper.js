@@ -9,7 +9,7 @@ class Whitepaper extends Component {
     render(){
         return (
             <>
-                <Row className={this.props.active + " row-sec2 m-0"}>
+                <Row className={this.props.active + " row-sec2 m-0"} id="Whitepaper">
                     <Col md={12} className="wp-title">
                         <span>WHITE PAPER</span>
                     </Col>

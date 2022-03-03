@@ -21,6 +21,7 @@ class Header extends Component {
         this.setState({
             page: index,
         })
+        this.props.handleClick(index);
     }
     mobileHeader = (e) => {
         this.setState({

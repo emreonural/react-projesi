@@ -9,7 +9,7 @@ class Exchance extends Component {
     render(){
         return (
             <>
-                <Row className={this.props.active + " row-sec2 m-0"}>
+                <Row className={this.props.active + " row-sec2 m-0"} id="Exchance">
                     <Col md={12} className="exchance-title">
                         <span>DECENTRALIZED EXCHANCE PLATFORM</span>
                         <p>Ixirswap is a decentralized exchance operating on the BSC network.</p>

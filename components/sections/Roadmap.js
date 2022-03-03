@@ -9,7 +9,7 @@ class Roadmap extends Component {
     render(){
         return (
             <>
-                <Row className={this.props.active + " row-sec1 m-0"}>
+                <Row className={this.props.active + " row-sec1 m-0"} id="Roadmap">
                     <Col md={12} className="roadmap-body d-xl-block d-lg-block d-md-none d-sm-none d-sm-none d-none">
                         <Col md={12} className="roadmap-title">
                             <span>ROAD MAP</span>

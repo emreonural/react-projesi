@@ -9,14 +9,14 @@ class Contact extends Component {
     render(){
         return (
             <>
-                <Row className={this.props.active + " row-sec1 m-0 d-block"}>
+                <Row className={this.props.active + " row-sec1 m-0 d-block"} id="Contact">
                     <Col md={12} className="tokenomics-title">
                         <span>CONTACT US</span>
                     </Col>
                     <Col md={9} className="contact-body mx-auto">
                         <Col md={12} className="input-body-1 d-lg-flex d-md-block">
                             <Col lg={6} md={12} className="input-area mb-4">
-                                <InputGroup className="mb-5">
+                                <InputGroup className="mb-3">
                                     <span className="input-title">Name</span>
                                     <FormControl
                                         aria-label="default"
@@ -26,7 +26,7 @@ class Contact extends Component {
                                 </InputGroup>
                             </Col>
                             <Col lg={6} md={12} className="input-area mb-4">
-                                <InputGroup className="mb-5">
+                                <InputGroup className="mb-3">
                                     <span className="input-title">Email</span>
                                     <FormControl
                                         aria-label="default"
@@ -37,7 +37,7 @@ class Contact extends Component {
                             </Col>
                         </Col>
                         <Col md={12} className="input-body-2 d-flex mb-4">
-                            <InputGroup className="mb-5">
+                            <InputGroup className="mb-3">
                                 <span className="input-title">Subject</span>
                                 <FormControl
                                     aria-label="default"
@@ -47,7 +47,7 @@ class Contact extends Component {
                             </InputGroup>
                         </Col>
                         <Col md={12} className="input-body-3 mb-4">
-                            <InputGroup className="mb-5">
+                            <InputGroup className="mb-3">
                                 <span className="input-title">Message</span>
                                 <FormControl
                                     as="textarea"

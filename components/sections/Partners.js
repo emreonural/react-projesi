@@ -54,7 +54,7 @@ class Partners extends Component {
     render(){
         return (
             <>
-                <Row className={this.props.active + " row-sec2 m-0"}>
+                <Row className={this.props.active + " row-sec2 m-0"} id="Partners">
                     <Col md={12} className="h-50">
                         <Col md={12} className="partners-title">
                             <span>OUR PARTNERS</span>
