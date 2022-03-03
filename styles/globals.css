@@ -291,17 +291,18 @@ a:hover {
       height: 100px;  
     }
     .navigator::before {
-      position: relative;
-      background: #fff;
-      display: flex;
-      width: 7px;
-      height: 7px;
-      content: '';
-      border-radius: 8px;
-      transition: 1s linear all;
-      margin: 5px 0;
-      cursor: pointer;
-    }
+        position: relative;
+        background: #fff;
+        display: flex;
+        width: 7px;
+        height: 7px;
+        content: '';
+        border-radius: 8px;
+        transition: 1s linear all;
+        margin: 10px 0;
+        cursor: pointer;
+      }
+      
     .navigator.active::before {
       position: relative;
       background: #fff;
