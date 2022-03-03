@@ -114,10 +114,34 @@ class Main extends Component {
         // window.removeEventListener("touchend", this.handleTEnd.bind(this));
     }
     handleNavigate = async (ind) => {
-        await this.setState({
-            page: ind,
-        });
-        await window.scrollTo(0, (this.state.page)*this.state.innerheight);
+        
+        if(this.state.canscroll){
+            if (ind < this.state.page){
+                await this.setState({
+                    page: ind,
+                    canscroll: false,
+                });
+                for(var i = ((this.state.page + 1)*this.state.innerheight/10); i >= ((this.state.page)*this.state.innerheight/10); i--){
+                    await window.scrollTo(0, i*10);
+                    await this.sleep(7);
+                }
+            }
+
+            else{
+                await this.setState({
+                    canscroll: false,
+                    page: ind,
+                });
+                for(var i = ((this.state.page - 1)*this.state.innerheight/10); i <= ((this.state.page)*this.state.innerheight/10); i++){
+                    await window.scrollTo(0, i*10);
+                    await this.sleep(7);
+                }
+            }
+            await this.sleep(500);
+            this.setState({
+                canscroll: true,
+            })
+        }
     }
     render(){
         return (
